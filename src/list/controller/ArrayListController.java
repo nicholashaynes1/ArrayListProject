@@ -25,16 +25,33 @@ public class ArrayListController
 	{
 		firstWords.add("CEHRHEIUFHEIUFHIHhefuihfwiuhiuawehrlhailuehiuhfwiahf");
 		firstWords.add("bababaabbabababbababbababbababababababbaba");
+		firstWords.add("MOMOMOMOMOMOMOMOMOM");
+		firstWords.add(1, "death to fake metal");
+		
 		displayList();
+		firstWords.set(2, "life is just pain before death");
+		firstWords.remove(0);
+		displayList();
+		showOtherLoop();
+		
+		
+		
 	}
 
 	private void displayList()
 	{
+		popupDisplay.showList("The size list is " + firstWords.size());
 		for(int spot = 0; spot < firstWords.size(); spot++)
 		{
 			popupDisplay.showList("The contents at " +spot+ " are " + firstWords.get(spot));
 		}
 	}
-
+	private void showOtherLoop()
+	{
+		for(String words : firstWords)
+		{
+			popupDisplay.showList(words);
+		}
+	}
 
 }
